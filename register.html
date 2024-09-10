@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>MYAPP</h1>
+    <nav>
+      <div class="nav-links"> 
+        <a href="./register.html">Register</a> 
+        <a href="./login.html">Login</a> 
+        <a href="./edit_profile.html">Profile</a> 
+        <a href="./user_listing.html">Users</a>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="form-container">
+      <h2>User Registration</h2>
+      <form id="registration-form" onsubmit="return validateForm()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('show');
+    }
+
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (username === '') {
+        alert('Username is required');
+        return false;
+      }
+
+      if (email === '') {
+        alert('Email is required');
+        return false;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+      }
+
+      if (password === '') {
+        alert('Password is required');
+        return false;
+      }
+
+      if (confirmPassword === '') {
+        alert('Confirm Password is required');
+        return false;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
+
+
+<!--p>lorem,title,ctrl+/ to comment meta nem, pre tag to display as it is how much spaces,line break
+<del></del> tag is used to cross a word , <mark> tag is used to highlight a word
+    global attributes mean can be used with any tag like title,style="background-color:yellow,text-align:center"
+    pexels,unspalash,shift+alt key+ down arrow
+    footer,clear:both
+
+    BACKGROUND POSITION:bottom right
+                      center center image is displayed on middle of table
+
+                      padding:top r b l;
+
+-->
+
+
+

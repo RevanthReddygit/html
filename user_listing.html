@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Listing</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>MYAPP</h1>
+    <nav>
+      <div class="nav-links"> 
+        <a href="./register.html">Register</a> 
+        <a href="./login.html">Login</a> 
+        <a href="./edit_profile.html">Profile</a> 
+        <a href="./user_listing.html">Users</a>
+      </div>
+    
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="list-container">
+      <h2>User Listing</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="user-list">
+          <tr data-id="1">
+            <td>Rushi</td>
+            <td>Rushi@gmail.com</td>
+            <td>
+              <button class="edit-button" onclick="location.href ='edit_profile.html'">Edit</button>
+              <button class="delete-button" onclick="deleteUser(1)">Delete</button>
+            </td>
+          </tr>
+          <tr data-id="2">
+            <td>Revanth</td>
+            <td>Revanth@example.com</td>
+            <td>
+              <button class="edit-button" onclick="location.href = 'edit_profile.html'">Edit</button>
+              <button class="delete-button" onclick="deleteUser(2)">Delete</button>
+            </td>
+          </tr>
+          <!-- More rows can be added here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('show');
+    }
+
+    function deleteUser(userId) {
+      const row = document.querySelector(`tr[data-id="${userId}"]`);
+      row.remove();
+    }
+  </script>
+</body>
+</html>
