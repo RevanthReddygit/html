@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Listing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            margin-top: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid black;
+            border-bottom: 1px solid gainsboro;
+        }
+        th {
+            background-color: whitesmoke;
+            font-weight: bold;
+            color: dimgray;
+        }
+        tr:hover {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>User List</h1>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead> 
+        <tbody>
+            <tr>
+                <td>Revanth</td>
+                <td>Hyderabad , India</td>
+                <td>Revanth@gmail.com</td>
+                <td><input type="button" value="Delete" onclick="deleteRow(this)"> <input type="button" value="Edit" onclick="editRow(this)"></td>
+            </tr>
+            <tr>
+                <td>Ram</td>
+                <td>Dehil , India</td>
+                <td>ram@gmail.com</td>
+                <td><input type="button" value="Delete" onclick="deleteRow(this)"> <input type="button" value="Edit" onclick="editRow(this)"></td> 
+            </tr>
+            <tr>
+                <td>Krishna</td>
+                <td>Mumbai , India</td>
+                <td>Krishna@gmail.com</td>
+                <td><input type="button" value="Delete" onclick="deleteRow(this)"> <input type="button" value="Edit" onclick="editRow(this)"></td> 
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function deleteRow(r) {
+            const i = r.parentNode.parentNode.rowIndex;
+            alert("Do you really want to delete?");
+            document.getElementById("myTable").deleteRow(i);
+        }
+        
+        function editRow(r) {
+            alert("Edit action will be implemented here.");
+        }
+    </script>
+</body>
+</html>
